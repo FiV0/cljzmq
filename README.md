@@ -6,6 +6,25 @@ Clojure bindings for ØMQ.
 
 ## Installation
 
+You need to have [zeromq](https://zeromq.org/download/) and [jzmq](https://github.com/zeromq/jzmq).
+On debian based systems these can be installed via
+```bash
+apt install libzmq3-dev libzmq-java
+```
+
+when using the library one also needs to pass `jzmq`'s native library location to Java, something of the following sort
+
+```bash
+clj -J-Djava.library.path=/usr/share/
+```
+
+On debian systems you can find the library location via
+```bash
+dpkg -L libzmq-jni
+```
+
+
+
 ```clj
 [org.zeromq/cljzmq "0.1.5"]
 ```
